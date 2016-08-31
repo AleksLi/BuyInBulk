@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Created by AleksLi
+ * <alex.litvinov@itdelight.com>
+ */
+ -->
+<layout version="0.1.0">
+
+	<catalog_product_view>
+		<reference name="head">
+			<action method="addItem">
+				<type>js</type>
+				<name>prototype/window.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/itdelight/bulk_buy_popup.js</name>
+			</action>
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/itdelight/bulk_styles.css</name>
+			</action>
+			<action method="addItem">
+				<type>js_css</type>
+				<name>prototype/windows/themes/default.css</name>
+			</action>
+			<action method="addCss">
+				<name>lib/prototype/windows/themes/magento.css</name>
+			</action>
+		</reference>
+
+		<reference name="product.info.container1">
+			<block type="Itdelight_BuyInBulk_Block_Catalog_Product_View_Type_Configurable" name="buy_in_bulk"
+				   template="itdelight/bulkpopup.phtml"/>
+		</reference>
+		<reference name="before_body_end">
+			<block type="page/html_head" name="extended_add_to_cart_form" as="extended_form" after="-"
+				   template="itdelight/extras.phtml">
+				<action method="addItem">
+					<type>skin_js</type>
+					<name>js/itdelight/extended_add_to_cart_form.js</name>
+				</action>
+			</block>
+		</reference>
+	</catalog_product_view>
+</layout>

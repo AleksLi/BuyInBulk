@@ -1,0 +1,47 @@
+<?php
+/**
+ * Created by AleksLi
+ * <alex.litvinov@itdelight.com>
+ */
+$_product = $this->getProduct();
+$productAttributes = $this->getProductFrontendAttributes();
+$allowedAttr = $this->getAllowedAttrCodes();
+$tablePopupClass = (count($allowedAttr) != 2 ) ? "" : "bulk_table_popup";
+?>
+<div id="<?php echo $tablePopupClass; ?>" class="bulk_popup_wrapper" style="display: none">
+    <div class="popup_header"><?php echo $this->__("Purchase"); ?></div>
+    <table id="bulk_product" class="bulk_table">
+        <tr>
+            <th><?php echo $this->__("Color"); ?></th>
+            <?php foreach ($this->getAllAvailableProductsByAttrCode($allowedAttr[1])['options'] as $attr ):  ?>
+                <th><?php echo $attr['label']  ?></th>
+            <?php endforeach; ?>
+            <th><?php echo $this->__("All sizes") ?></th>
+        </tr>
+        <?php foreach ($this->getAllAvailableProductsByAttrCode($allowedAttr[0])['options'] as $attr  ):  ?>
+            <tr data-attrId="<?php echo $attr['id'] ?>">
+                <td class="attribute_class"><?php echo $attr['label']  ?></td>
+                <?php foreach ($this->getAllAvailableProductsByAttrCode($allowedAttr[1])['options'] as $option  ):  ?>
+                    <?php  $matchesProdId = $this->compareArraysForMatches( $option['products'], $attr['products']);  ?>
+                    <?php $product_not_available = is_numeric($matchesProdId) ? 'product_id' : $matchesProdId ?>
+                    <td class="<?php echo $product_not_available; ?>" data-productId="<?php echo $matchesProdId ?>"
+                        data-attrId="<?php echo $attr['id'] ?>">
+                        <input id="spinner_<?php echo $matchesProdId ?>" name="value">
+                    </td>
+                <?php endforeach; ?>
+                <td class="attribute_id" data-attrId="<?php echo $attr['id'] ?>">
+                    <input id="spinner_row_<?php echo $attr['id'] ?>" name="value"></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <?php if($_product->isSaleable()): ?>
+        <div class="btn-buy-wrapper">
+            <button type="button" title="<?php echo $this->__('Buy in bulk'); ?>"
+                    class="button btn-cart btn-buy-in-bulk" onclick="productAddToCartForm.popupSubmit(this)">
+                <span><span><?php echo $this->__('Buy in Bulk'); ?></span></span></button>
+        </div>
+    <?php else: ?>
+        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+    <?php endif; ?>
+</div>

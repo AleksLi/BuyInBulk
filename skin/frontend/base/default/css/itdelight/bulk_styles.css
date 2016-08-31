@@ -1,0 +1,138 @@
+/*========================================================
+                      Buy in Bulk Popup
+=========================================================*/
+/*  Popup styles
+========================================================*/
+
+#buy_in_bulk .popup_header {
+    margin-bottom: 23px;
+    font-size: 30px;
+    color: #434343;
+}
+
+#buy_in_bulk {
+    height: auto !important;
+    background-color: white;
+    padding: 8px;
+    border-radius: 3px;
+}
+
+#buy_in_bulk .magento_close {
+    width: 16px;
+    height: 16px;
+    right: 18px;
+    top: 18px;
+    background: url("../../images/popup_close.png") 0 0 no-repeat;
+}
+#buy_in_bulk #bulk_table_popup {
+    padding: 28px 42px 18px;
+}
+
+#buy_in_bulk_content {
+    border: 2px solid #97d1e7;
+    border-radius: 3px;
+    width: 100% !important;
+    height: 100% !important;
+}
+#bulk_product {
+    color: #363636;
+    font-family: arial, sans-serif;
+}
+#bulk_product tr th {
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+}
+#bulk_product tr th:first-child,
+#bulk_product tr td:first-child
+{
+    text-align: left;
+}
+#bulk_product tr th + th {
+    padding-left: 49px;
+}
+#bulk_product tr + tr td {
+    border-top: 1px solid #e8e8e8;
+}
+#bulk_product tr td + td {
+    padding-left: 49px;
+}
+#bulk_product tr td {
+    font-size: 16px;
+    padding: 10px 0;
+    height: 50px;
+    text-align: center;
+}
+#bulk_product tr td.attribute_class {
+    word-wrap: break-word;
+    width: 120px;
+}
+#bulk_product tr td input {
+    width: 24px;
+    font-size: 13px;
+    color: #000000;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    height: 29px;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: -1px 0;
+}
+#bulk_product tr td input:focus {
+    outline: none;
+}
+#bulk_product tr td .ui-spinner {
+    width: 52px;
+    display: block;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+}
+#bulk_product tr td .ui-icon-plus,
+#bulk_product tr td .ui-icon-minus {
+    display: none;
+}
+#bulk_product tr td .ui-spinner-up {
+    background: url("../../images/popup_plus.png") center no-repeat;
+    float: right;
+    width: 13px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#bulk_product tr td .ui-spinner-down {
+    background: url("../../images/popup_minus.png") center no-repeat;
+    float: left;
+    width: 13px;
+    height: 24px;
+    cursor: pointer;
+}
+#bulk_product #spinner_not_available {
+    display: none;
+}
+#bulk_product tr td .empty {
+    background: url("../../images/popup_delete.png") center no-repeat;
+    float: right;
+    width: 49px;
+    height: 24px;
+    cursor: default;
+}
+
+#buy_in_bulk .buyinbulk_top,
+#buy_in_bulk .buyinbulk_bottom
+{
+    display: none;
+}
+/* Popup Button styles
+========================================================*/
+#buy_in_bulk .btn-buy-wrapper {
+    text-align: right;
+    border-top: 2px solid #e8e8e8;
+    margin-top: 9px;
+    color: #363636;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    padding: 11px 0;
+    margin-bottom: 10px;
+}
+

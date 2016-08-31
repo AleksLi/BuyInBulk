@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Created by AleksLi
+ * <alex.litvinov@itdelight.com>
+ */
+ -->
+<config>
+    <modules>
+        <Itdelight_BuyInBulk>
+            <version>0.1.0</version>
+        </Itdelight_BuyInBulk>
+    </modules>
+    <global>
+        <models>
+            <itdelight_buyinbulk>
+                <class>Itdelight_BuyInBulk_Model</class>
+                <resourceModel>itdelight_buyinbulk_resource</resourceModel>
+            </itdelight_buyinbulk>
+            <itdelight_buyinbulk_resource>
+                <class>Itdelight_BuyInBulk_Model_Resource</class>
+            </itdelight_buyinbulk_resource>
+        </models>
+        <blocks>
+            <itdelight_buyinbulk>
+                <class>Itdelight_BuyInBulk_Block</class>
+            </itdelight_buyinbulk>
+            <catalog>
+                <rewrite>
+                    <product_view_type_configurable>Itdelight_BuyInBulk_Block_Catalog_Product_View_Type_Configurable</product_view_type_configurable>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <helpers>
+            <itdelight_buyinbulk>
+                <class>Itdelight_BuyInBulk_Helper</class>
+            </itdelight_buyinbulk>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <itdelight_buyinbulk>
+                    <file>itdelight/buyinbulk.xml</file>
+                </itdelight_buyinbulk>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <translations>
+                    <files>
+                        <default>Itdelight_BuyInBulk.csv</default>
+                    </files>
+                </translations>
+            </modules>
+        </translate>
+    </frontend>
+</config>
